@@ -1,5 +1,5 @@
 import os
-from app.configs.config import Configuration
+from configs.config import Configuration
 from app import create_app, db
 from app.models.user import User
 
