@@ -8,4 +8,4 @@ api = Blueprint('api',__name__)
 def before_request():
     pass
 
-from . import events
+from . import events        # This is important for blueprint to work.. It is placed in last to prevent cyclic dependency
