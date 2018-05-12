@@ -1,0 +1,2 @@
+class ValidationError(KeyError):
+    pass
