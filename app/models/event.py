@@ -8,16 +8,16 @@ class Event(db.Model):
     log = db.Column(db.String, nullable=False)
 
     def get_url(self):
-        return url_for('api.get_event', self.id, _external=True)
+        return url_for('api.get_event', id=self.id, _external=True)
 
-    def from_json(self):
+    def from_dict(self,data):
         try:
             self.tool = data['tool']
             self.log = data['log']
         except Exception as e:
             raise ValidationError('Invaid Event Data: {}'.format(e.args[0]))
     
-    def to_json(self):
+    def to_dict(self):
         return {
             'id': self.id,
             'tool': self.tool,
